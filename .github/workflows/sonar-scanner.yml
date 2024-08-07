@@ -18,7 +18,7 @@ jobs:
           github.event.pull_request.head.repo.full_name == github.repository ||
           github.event_name != 'pull_request_target') }}
         run: echo "Unsecure PR, must be labelled with the 'safe' label, then run the workflow again" && exit 1
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Use Node.js 13
